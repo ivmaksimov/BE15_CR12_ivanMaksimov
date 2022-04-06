@@ -64,6 +64,7 @@ mysqli_close($connect);
     <div class="be1">
         <a href="create.php"><button class="btn">Add New Destination</button></a>
         <a href="Api/displayAll.php"><button class="btn back">API</button></a>
+        <a href="Api/showAll.php"><button class="btn back">API to AJAX</button></a>
     </div>
     <div>
         <h1 class="price shadow">SUMMER DESTINATIONS</h1>

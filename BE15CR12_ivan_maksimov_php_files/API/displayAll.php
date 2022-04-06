@@ -1,8 +1,6 @@
  <?php
     require_once "../actions/db_connect.php";
-    require_once "convertJSON.php";
 
-    //checks if you are comming from a GET Method (var_dump $_SERVER to see which properties could be accessed!)
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $sql = "SELECT * FROM destin";
         $result = mysqli_query($connect, $sql);
@@ -18,5 +16,22 @@
     } else {
         response(400, "Invalid Request", null);
     }
+
+    function response($status, $status_message, $row)
+    {
+
+
+        $response['status'] = $status;
+        $response['status_message'] = $status_message;
+
+        $response = $row;
+
+
+        $json_response = json_encode($response);
+
+
+        echo $json_response;
+    }
+
 
     ?>
